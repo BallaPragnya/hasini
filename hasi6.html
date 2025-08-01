@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy girlfriends day bbg</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background-color: #ffe4ec;
+      color: #4a0033;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background: url('https://i.postimg.cc/xTx0F2g8/mainim.jpg') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 192, 203, 0.4);
+      backdrop-filter: blur(4px);
+      z-index: 1;
+    }
+
+    .text-box {
+      position: relative;
+      z-index: 2;
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 30px 50px;
+      border-radius: 15px;
+      font-size: 2.2em;
+      font-family: 'Playfair Display', serif;
+      color: #8b005d;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      animation: slideUp 1.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .carousel-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ffd6e8;
+      padding: 20px;
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: hidden;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      scroll-behavior: smooth;
+      width: 90%;
+      max-width: 800px;
+    }
+
+    .carousel-item {
+      flex: 0 0 calc(33.33% - 13.33px);
+      scroll-snap-align: center;
+      position: relative;
+    }
+
+    .memory-button {
+      background-image: url('https://i.pinimg.com/736x/05/07/7f/05077f4d2f6c685a7b0de8a4fef907ea.jpg');
+      background-size: cover;
+      width: 100%;
+      height: 100px;
+      border-radius: 20px;
+      border: none;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2em;
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .nav-arrow {
+      font-size: 2em;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px;
+      color: #a61e63;
+      background: none;
+      border: none;
+    }
+
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(5px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .popup-content {
+      background: url('https://wallpapers.com/images/hd/abstract-cute-pink-aesthetic-holographic-qbc4q84xy3jblr8q.jpg') no-repeat center center/cover;
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 90%;
+      max-height: 90%;
+      text-align: center;
+    }
+
+    .popup-content img {
+      max-width: 80%;
+      max-height: 350px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .popup-text {
+      color: #6a004f;
+      font-style: normal; color: black;
+      font-size: 1em;
+    }
+
+    .close-popup {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2em;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 768px) {
+      .text-box {
+        padding: 20px 30px;
+        font-size: 1.5em;
+      }
+
+      .carousel-item {
+        flex: 0 0 calc(100% - 20px);
+      }
+
+      .memory-button {
+        width: 100%;
+        height: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="https://docs.google.com/uc?export=download&id=10klKL7HRBKyTsHK3ovHhfN3AZyo-BqQD" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="hero">
+    <div class="overlay"></div>
+    <div class="text-box">HAPPY GIRLFRIEND'S DAY BBG</div>
+  </div>
+
+  <div class="carousel-container">
+    <button class="nav-arrow" onclick="scrollCarousel(-1)">&#8592;</button>
+    <div class="carousel" id="carousel">
+      <div class="carousel-item"><button class="memory-button" onclick="showPopup('https://i.postimg.cc/kMS1pFcb/prop.jpg')">Memory 1</button></div>
+      <div class="carousel-item"><button class="memory-button" onclick="showPopup('https://i.postimg.cc/pLBXYF4N/hug.jpg')">Memory 2</button></div>
+      <div class="carousel-item"><button class="memory-button" onclick="showPopup('https://i.postimg.cc/zGp8R1H8/class-heart.jpg')">Memory 3</button></div>
+      <div class="carousel-item"><button class="memory-button" onclick="showPopup('https://i.postimg.cc/h4xn1mQC/phoncov.jpg')">Memory 4</button></div>
+      <div class="carousel-item"><button class="memory-button" onclick="showPopup('https://i.postimg.cc/T1ypt3mV/roomie.jpg')">Memory 5</button></div>
+      <div class="carousel-item"><button class="memory-button" onclick="showPopup('https://i.postimg.cc/y8TcgWTx/craz.jpg')">Memory 6</button></div>
+      <div class="carousel-item"><button class="memory-button" onclick="showPopup('https://i.postimg.cc/QdSKNwXW/hand.jpg')">Memory 7</button></div>
+      <div class="carousel-item"><button class="memory-button" onclick="showPopup('https://i.postimg.cc/YSkRZJdG/flowlak.jpg')">Memory 8</button></div>
+    </div>
+    <button class="nav-arrow" onclick="scrollCarousel(1)">&#8594;</button>
+  </div>
+
+  <div class="popup-overlay" id="popup">
+    <span class="close-popup" onclick="closePopup()">&times;</span>
+    <div class="popup-content">
+      <img id="popupImage" src="" alt="Popup Image">
+      <div class="popup-text"> <!-- Write text for the image here --> </div>
+    </div>
+  </div>
+
+  <script>
+    function showPopup(imageUrl) {
+      const captions = {
+        'https://i.postimg.cc/kMS1pFcb/prop.jpg': "istg you're my soulmate,roommate,twin and every other label that has existed in this world.There'll never be a time that you'll ask me out and I'll tell you no.I still feel like we just met in 8th grade and we're sitting around the same table talking random bs not knowing that 6 years down the line I'll be making u a happy girlfriends day website.U were,are,and forever will be my most favourite person in the entitre world coz no one even comes close to what I have with you.Ig you're the only person that I've cried for till now skksknksfsb only u can get me so emotional.At this point u're so deeply tangled into my life that imagining it without you would be pointless.ILYSM 🪄",
+        'https://i.postimg.cc/pLBXYF4N/hug.jpg': "The onli kid i love givig hugs tooooo,,,ur awkard head pats are my abs favvvv,,,ik u dont like hugss but u secretely love giving me awkard hugs bahahahahahahah",
+        'https://i.postimg.cc/zGp8R1H8/class-heart.jpg': "School wudnt even be school without you.Exchanging our jackets and roaming around the corridors like we're meant to be.Bunking is not fun anymore coz u're not there to bunk with💖",
+        'https://i.postimg.cc/h4xn1mQC/phoncov.jpg': "On my phone cover coz i love seeing usss andddd andddd ABSOLUTELY COZ U'RE THE LOVE OF MY LIFE,,,,even considering to date a guy seems bs coz the onli thought i have is what if he doesnt get me like she doessss,,my taste in men is shit anko adhi pakkaki pedadham",
+        'https://i.postimg.cc/T1ypt3mV/roomie.jpg': "Only person I wudnt get bored of even if i stayed with for 24/7,,,I don't think I wud've survived that shithole we called college with you,,I have had two roomates after you and i can tell,,,U GET THE BEST ROOMATE TITLE(no one even comes close also anko)",
+        'https://i.postimg.cc/y8TcgWTx/craz.jpg': "The only person I'll do the absolute dumbest craziest shit with and not regret,,just staying beside eachother chalu to make us both laugh like we're koncham crackk(manchi cute ga kuda navvam ra babu edho sachipothhunattu navutham)",
+        'https://i.postimg.cc/QdSKNwXW/hand.jpg': "TO THE ONE KID WHOSE HAND I'LL NEVER LET GO,,,u'll forver be the first person on my fav person list",
+        'https://i.postimg.cc/YSkRZJdG/flowlak.jpg': "The onli kid that goe sdown on the knees and gives me flowers sob sobbb,, i love you way too fucking much and anddd again I LOVE YOU BABY DOLLLL"
+      };
+
+      document.getElementById('popupImage').src = imageUrl;
+      document.querySelector('.popup-text').textContent = captions[imageUrl] || '';
+      document.getElementById('popup').style.display = 'flex';
+    }
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+
+    function scrollCarousel(direction) {
+      const carousel = document.getElementById('carousel');
+      carousel.scrollBy({
+        left: direction * 300,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+</body>
+</html>
